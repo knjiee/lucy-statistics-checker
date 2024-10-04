@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p>Lucy</p>
+      <h1>Statistics Calculator</h1>
+
+      <label for="numbers">Enter numbers (comma separated):</label>
+      <input type="text" id="numbers" placeholder="e.g., 1, 2, 3, 4" />
+
+      <label for="interval-option">Choose class interval method:</label>
+      <select id="interval-option">
+        <option value="automatic" selected>Automatic Calculation</option>
+        <option value="manual">Manually Input</option>
+      </select>
+
+      <label for="class-intervals" id="class-intervals-label"
+        >Enter class intervals (comma separated, e.g., 1-3,4-6):</label
+      >
+      <input type="text" id="class-intervals" placeholder="e.g., 1-3,4-6" />
+
+      <button onclick="calculateValues()">Calculate</button>
+
+      <h2>Results</h2>
+      <p id="result-number-of-data"></p>
+      <p id="result-class-width"></p>
+      <br />
+      <!-- <p><strong>Formula for Mean:</strong> \( \text{Mean} = \frac{\sum{x}}{n} \)</p> -->
+      <p id="result-midrange"></p>
+      <p id="result-range"></p>
+      <br />
+      <p id="result-mean"></p>
+      <p id="result-population-mean"></p>
+      <p id="result-population-median"></p>
+      <p id="result-population-mode"></p>
+      <p id="result-mean-deviation"></p>
+      <br />
+      <p id="result-population-variance"></p>
+      <p id="result-population-stddev"></p>
+      <br />
+      <p id="result-median"></p>
+      <p id="result-mode"></p>
+
+      <h2>Frequency Distribution Table</h2>
+      <table id="frequency-table">
+        <thead>
+          <tr>
+            <th>Class Limit</th>
+            <th>Class Boundaries</th>
+            <th>Frequency</th>
+            <th>Class Mark</th>
+            <th>Cumulative Frequency (CF)</th>
+            <th>Relative Frequency (RF)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically inserted here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total</td>
+            <td id="total-frequency"></td>
+            <td></td>
+            <td></td>
+            <td id="total-rf"></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <h2>Estimated Population Mean Table</h2>
+      <table id="population-mean-table">
+        <thead>
+          <tr>
+            <th>Frequency</th>
+            <th>Class Mark</th>
+            <th>Frequency * Class Mark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+
+      <h2>Mean Deviation Table</h2>
+      <table id="mean-deviation-table">
+        <thead>
+          <tr>
+            <th>Data Point (x)</th>
+            <th>|x - Mean|</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Mean deviation rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <h2>Graph of Data</h2>
+      <!-- Add the canvas element where the chart will be rendered -->
+      <canvas id="dataChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
